@@ -43,7 +43,7 @@ const ProductDetail = ({ id }) => {
             layoutId={`product-card-image-${id}`}
             src={`/images/${product.image}.jpg`}
           />
-          <motion.div className="p-4" layoutId={`product-card-detail-${id}`}>
+          <motion.div className="p-4">
             <h2 className="text-2xl">{product.name}</h2>
             <h3 className="text-sm text-gray-600">{product.price}</h3>
             <p className="text-sm text-gray-800 mt-2">Lorem ipsum odor amet, consectetuer adipiscing elit. Maximus penatibus vestibulum fermentum tellus nunc. Nec lectus ligula platea; parturient pellentesque senectus.</p>
