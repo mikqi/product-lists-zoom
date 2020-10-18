@@ -1,0 +1,47 @@
+[
+  {
+    "image": "cake",
+    "name": "Cupcake Uenak",
+    "price": "Rp40.000"
+  },
+  {
+    "image": "burger",
+    "name": "Burger Ubasi",
+    "price": "Rp53.000"
+  },
+  {
+    "image": "fish",
+    "name": "Ikan Teri",
+    "price": "Rp15.000"
+  },
+  {
+    "image": "pizza",
+    "name": "Pizza Vegan",
+    "price": "Rp80.000"
+  },
+  {
+    "image": "tart",
+    "name": "Bolu Cokelat Uenak",
+    "price": "Rp140.000"
+  },
+  {
+    "image": "burgers",
+    "name": "Burger KFC",
+    "price": "Rp10.000"
+  },
+  {
+    "image": "cupcake2",
+    "name": "Cupcake Bunga",
+    "price": "Rp20.000"
+  },
+  {
+    "image": "tomato",
+    "name": "Kuah Tomat",
+    "price": "Rp33.000"
+  },
+  {
+    "image": "pastry",
+    "name": "Molen Cokelat",
+    "price": "Rp5.000"
+  }
+]

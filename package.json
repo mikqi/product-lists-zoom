@@ -7,10 +7,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "framer-motion": "^2.9.1",
     "next": "latest",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "swr": "0.1.18"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^2.1.2",
+    "tailwindcss": "^1.9.3"
+  }
 }

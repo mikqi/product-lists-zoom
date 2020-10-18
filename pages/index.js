@@ -1,19 +1,43 @@
-import useSWR from 'swr'
-import Person from '../components/Person'
+import { motion } from "framer-motion"
+import Header from "../components/Header"
+import ProductCard from "../components/ProductCard"
+import products from './items.json'
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.06
+    }
+  }
+}
+
+const item = {
+  hidden: { opacity: 0, y: 100 },
+  show: { opacity: 1, y: 0 }
+}
 
 export default function Index() {
-  const { data, error } = useSWR('/api/people', fetcher)
-
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
-
   return (
-    <ul>
-      {data.map((p, i) => (
-        <Person key={i} person={p} />
-      ))}
-    </ul>
+    <>
+      <div>
+        <Header />
+        <motion.div
+          className="grid grid-cols-2 gap-4"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
+          { products.map((product, idx) => (
+            <ProductCard
+              key={product.image + idx}
+              {...product}
+              variants={item}
+            />
+          ))}
+        </motion.div>
+      </div>
+    </>
   )
 }
