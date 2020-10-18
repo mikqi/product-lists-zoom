@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"
+import Link from 'next/link'
 import Header from "../components/Header"
 import ProductCard from "../components/ProductCard"
 import products from './items.json'
@@ -21,23 +22,22 @@ const item = {
 export default function Index() {
   return (
     <>
-      <div>
-        <Header />
-        <motion.div
-          className="grid grid-cols-2 gap-4"
-          variants={container}
-          initial="hidden"
-          animate="show"
-        >
-          { products.map((product, idx) => (
-            <ProductCard
-              key={product.image + idx}
-              {...product}
-              variants={item}
-            />
-          ))}
-        </motion.div>
-      </div>
+      <Header />
+      <motion.div
+        className="grid grid-cols-2 gap-4"
+        variants={container}
+        initial="hidden"
+        animate="show"
+      >
+        { products.map((product, idx) => (
+          <ProductCard
+            {...product}
+            variants={item}
+            key={product.image + idx}
+          />
+        ))}
+      </motion.div>
+    
     </>
   )
 }
