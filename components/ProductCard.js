@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 const ProductCard = ({ variants, image, name, price, id }) => {
+
   return (
     <motion.div
       transition={{ duration: 0.7, type: 'spring', stiffness: 200, damping: 30 }}
@@ -25,7 +26,7 @@ const ProductCard = ({ variants, image, name, price, id }) => {
           {price}
         </span>
       </motion.div>
-      <Link href={`?id=${image}`} >
+      <Link href={{ pathname: '/', query: { id }}} >
         <span className="absolute w-full h-full top-0 left-0">
           &nbsp;
         </span>

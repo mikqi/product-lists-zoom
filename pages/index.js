@@ -1,5 +1,5 @@
 import { motion, AnimateSharedLayout, AnimatePresence } from "framer-motion"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useRouter } from 'next/router'
 import Header from "../components/Header"
 import ProductCard from "../components/ProductCard"
@@ -11,7 +11,7 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.06
+      staggerChildren: 0.14
     }
   }
 }
@@ -23,10 +23,12 @@ const item = {
 
 export default function Index() {
   const router = useRouter()
+  const [id, setId] = useState('')
+  const query = router.query
 
   useEffect(() => {
-    console.log(router)
-  }, [router])
+    setId(query.id)
+  }, [query])
 
   return (
     <AnimateSharedLayout type="crossfade">
@@ -47,7 +49,7 @@ export default function Index() {
           />
         ))}
         <AnimatePresence>
-          {router.query.id && <ProductDetail id={router.query.id} />}
+          {id && <ProductDetail id={id} />}
         </AnimatePresence>
       </motion.div>
     </AnimateSharedLayout>

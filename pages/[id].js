@@ -38,12 +38,19 @@ const ProductDetail = ({ id }) => {
           transition={{ duration: 0.5, type: 'spring', stiffness: 200, damping: 20 }}
           className="bg-white rounded-2xl z-10 fixed m-4 right-0 md:right-auto bottom-0 max-w-lg  "
         >
-          <img
+          <motion.img
             className="rounded-t-2xl w-full h-64 object-cover"
             layoutId={`product-card-image-${id}`}
+            transition={{ duration: 0.5, type: 'spring', stiffness: 200, damping: 20 }}
+            exit={{ opacity: 0, transition: { duration: 0.15 } }}
             src={`/images/${product.image}.jpg`}
           />
-          <motion.div className="p-4">
+          <motion.div
+            layoutId={`product-card-detail-${id}`}
+            transition={{ duration: 0.5, type: 'spring', stiffness: 200, damping: 20 }}
+            exit={{ opacity: 0, transition: { duration: 0.15 } }}
+            className="p-4"
+          >
             <h2 className="text-2xl">{product.name}</h2>
             <h3 className="text-sm text-gray-600">{product.price}</h3>
             <p className="text-sm text-gray-800 mt-2">Lorem ipsum odor amet, consectetuer adipiscing elit. Maximus penatibus vestibulum fermentum tellus nunc. Nec lectus ligula platea; parturient pellentesque senectus.</p>

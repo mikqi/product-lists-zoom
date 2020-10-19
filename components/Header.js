@@ -6,7 +6,7 @@ const Header = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1.5 }}
       className="flex w-full justify-between bg-white py-3 mb-4 border-b border-gray-200"
     >
       <div className="flex flex-col">
