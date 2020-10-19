@@ -1,6 +1,5 @@
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import products from './items.json'
 import Link from 'next/link'
 

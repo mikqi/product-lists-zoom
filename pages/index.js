@@ -32,26 +32,28 @@ export default function Index() {
 
   return (
     <AnimateSharedLayout type="crossfade">
-      <Header />
+      <div className={`min-h-screen ${id && 'overlay-active'}`}>
+        <Header />
 
-      <motion.div
-        className="grid grid-cols-2 gap-4"
-        variants={container}
-        initial="hidden"
-        animate="show"
-        exit={{ y: 100, opacity: 0, transition: { duration: 1 } }}
-      >
-        { products.map((product, idx) => (
-          <ProductCard
-            {...product}
-            variants={item}
-            key={product.id}
-          />
-        ))}
-        <AnimatePresence>
-          {id && <ProductDetail id={id} />}
-        </AnimatePresence>
-      </motion.div>
+        <motion.div
+          className="grid grid-cols-2 gap-4"
+          variants={container}
+          initial="hidden"
+          animate="show"
+          exit={{ y: 100, opacity: 0, transition: { duration: 1 } }}
+        >
+          { products.map((product, idx) => (
+            <ProductCard
+              {...product}
+              variants={item}
+              key={product.id}
+            />
+          ))}
+          <AnimatePresence>
+            {id && <ProductDetail id={id} />}
+          </AnimatePresence>
+        </motion.div>
+      </div>
     </AnimateSharedLayout>
   )
 }

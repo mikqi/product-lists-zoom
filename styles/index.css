@@ -3,3 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 /* Stop purging. */
+
+.overlay-active {
+  @apply overflow-hidden;
+  min-height: calc(100vh - 32px);
+  max-height: calc(100vh - 32px);
+}
